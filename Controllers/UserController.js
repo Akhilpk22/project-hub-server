@@ -16,6 +16,7 @@ exports.register= async (req,res)=>{
           const existingUser = await users.findOne({email})
 
         if(existingUser){
+            
                 res.status(406).json("you account  already exist!!!!! please login....")
         }else{
 
@@ -38,6 +39,7 @@ exports.register= async (req,res)=>{
 // login
 exports.login =async(req,res)=>{
   console.log("inside login function");
+  
   const{email,password}= req.body
 
   try{

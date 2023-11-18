@@ -4,15 +4,16 @@
     const cors =require('cors')
     // import router
     const router = require('./Routes/router')
+
     // import db connections
     require('./DB/connection')
 
 
     // create an express application 
     const PFServer =express()
-
-    PFServer.use(cors())
     PFServer.use(express.json())
+   
+    PFServer.use(cors())
     PFServer.use(router)
 
     // port creatation  steps 
