@@ -20,6 +20,7 @@ const fileFilter = (req,file,callback)=>{
 }
 
 const multerConfig = multer({
+    
     storage,fileFilter
 })
 module.exports = multerConfig

@@ -1,4 +1,4 @@
-    // loads.env  file contents into process.env by default .
+    
     require ('dotenv').config()
     const express =require ('express')
     const cors =require('cors')
@@ -15,6 +15,8 @@
    
     PFServer.use(cors())
     PFServer.use(router)
+    // get images
+    PFServer.use('/Uploads',express.static('./Uploads'))
 
     // port creatation  steps 
     const PORT = 4000 || process.env.PORT
