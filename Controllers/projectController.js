@@ -43,6 +43,7 @@ exports.allUserprojects = async (req,res)=>{
         res.status(401).json(err)
     }
 }
+
 // getallprojects
 exports.getallprojects = async (req,res)=>{
     const searchKey = req.query.search
@@ -98,5 +99,17 @@ exports.editProjectController = async (req,res)=>{
     }
 
 }
-
+// delete
+exports.deleteProjectController = async(req,res)=>{
+    // get all projects
+    const {id}= req.params
+    try{
+        // response 
+        const removeProject = await projects.findByIdAndDelete({_id:id})
+        res.status(200).json(removeProject)
+    }catch(err){
+        res.status(401).json(err)
+    }
+}
+// 
 

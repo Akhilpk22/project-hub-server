@@ -60,3 +60,6 @@ exports.login =async(req,res)=>{
 
   }
 }
+
+// editUser
+

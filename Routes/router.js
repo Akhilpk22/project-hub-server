@@ -29,8 +29,13 @@ router.get('/projects/all',jwtmiddleware,projectContoller.getallprojects)
 // gethomeprojects
 router.get('/projects/home-projects',projectContoller.getHomeprojects)
 
-// 
+// update
 router.put('/projects/edit/:id',jwtmiddleware,multerConfig.single("projectImage"),projectContoller.editProjectController)
+
+// delete
+router.delete('/projects/remove/:id',jwtmiddleware,projectContoller.deleteProjectController)
+
+// updateUser 
 
 // export part to export to connection to  index.js to use server appliction
 module.exports = router
